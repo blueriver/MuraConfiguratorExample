@@ -18,7 +18,7 @@ function initExampleConfigurator(data){
 	initConfigurator(
 		data,
 		{
-			url:'../plugins/MuraConfiguratorExample/displayObjects/configurators/configuredObject/configurator.cfm',
+			url:'../plugins/ConfiguratorExample/displayObjects/configurators/configuredObject/configurator.cfm',
 			pars:'',
 			title: 'Example Configured Object',
 			init: function(){},
