@@ -16,7 +16,7 @@ component extends="mura.plugin.pluginGenericEventHandler" {
 	
 	public any function dspConfiguredObject($){
 		
-		return "Example Parameter: " & $.event('objectParams').exampleParam;
+		return "<p>Example Parameter 1: " & $.event('objectParams').exampleParam1 & "</p>";
 		
 	}
 }
