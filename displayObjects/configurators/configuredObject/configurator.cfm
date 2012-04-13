@@ -1,4 +1,5 @@
-﻿<!--
+﻿<cfscript>
+/*
    Copyright 2012 Blue River Interactive
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,22 +13,20 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
--->
-<cfscript>
-	$=application.serviceFactory.getBean("MuraScope").init(session.siteID);
-		
-	params=$.event("params");
-		
-	if(isJSON(params)){
-		params=deserializeJSON(params);
+*/
+	$ = application.serviceFactory.getBean('MuraScope').init(session.siteid);
+
+	if ( IsJSON($.event('params')) ) {
+		params = DeSerializeJSON($.event('params'));
 	} else {
-		params=structNew();
+		params = {};
 	}
-		
-	if(not structKeyExists(params,"exampleParam")){
-		params.exampleParam="";
-	}
-		
+
+	defaultParams = {
+		exampleParam = ''
+	};
+
+	StructAppend(params, defaultParams, false);
 </cfscript>
 <cfoutput>
 	<div id="availableObjectParams"	
